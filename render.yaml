@@ -1,0 +1,38 @@
+# Render.com Blueprint for SynaptiVerse
+# Deploy to: https://render.com
+
+services:
+  # Web Service
+  - type: web
+    name: synaptiverse
+    env: python
+    region: oregon
+    plan: free
+    branch: main
+    buildCommand: pip install -r requirements.txt
+    startCommand: python3 src/agents/web_ui.py
+    envVars:
+      - key: HOST
+        value: 0.0.0.0
+      - key: PORT
+        value: 8000
+      - key: DEBUG
+        value: False
+      - key: ENVIRONMENT
+        value: production
+      - key: COORDINATOR_SEED
+        generateValue: true
+      - key: ADVISOR_SEED
+        generateValue: true
+      - key: SECRET_KEY
+        generateValue: true
+      - key: STORE_PHI
+        value: False
+      - key: LOG_LEVEL
+        value: INFO
+      - key: METTA_KNOWLEDGE_PATH
+        value: src/metta/knowledge_graphs/medical_facts.metta
+      - key: METTA_CACHE_ENABLED
+        value: True
+      - key: METTA_MAX_FACTS
+        value: 1000

@@ -1710,11 +1710,15 @@ async def health_check():
     }
 
 if __name__ == "__main__":
+    # Get port from environment or use default
+    port = int(os.getenv("PORT", "8000"))
+    host = os.getenv("HOST", "0.0.0.0")
+    
     print("\n" + "="*60)
     print("🚀 SYNAPTIVERSE WEB UI - STARTING")
     print("="*60)
-    print("\n🌐 Web Interface will be available at:")
-    print("   http://localhost:8000")
+    print(f"\n🌐 Web Interface will be available at:")
+    print(f"   http://localhost:{port}")
     print("\n📊 Features:")
     print("   • Interactive symptom analysis")
     print("   • MeTTa AI-powered recommendations")
@@ -1723,4 +1727,4 @@ if __name__ == "__main__":
     print("\n💡 Press Ctrl+C to stop")
     print("="*60 + "\n")
     
-    uvicorn.run(app, host="0.0.0.0", port=8000, log_level="info")
+    uvicorn.run(app, host=host, port=port, log_level="info")
