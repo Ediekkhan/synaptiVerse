@@ -1,0 +1,63 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+ENV/
+env/
+
+# Environment variables
+.env
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+*.log
+
+# Docker
+*.pid
+
+# Agent storage
+.uagents/
+agent_storage/
+
+# Hackathon preparation docs (keep only essential docs)
+DEMO_VIDEO_SCRIPT.md
+QUICK_DEMO_GUIDE.md
+60_SECOND_DEMO.md
+DASHBOARD_FEATURES.md
+WHATS_NEW.md
+HACKATHON_READY.md
+FINAL_SUBMISSION_CHECKLIST.md
+SUBMISSION_READY.md
+PRESENTATION_GUIDE.md
+TWITTER_THREAD.md
+HACKATHON_SUBMISSION_GUIDE.md
+CONFIG_SETUP_COMPLETE.md

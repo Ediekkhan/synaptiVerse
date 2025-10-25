@@ -1,0 +1,89 @@
+# Agentverse Manifest for Appointment Coordinator Agent
+# This manifest is published to Agentverse for agent discoverability
+
+name: appointment-coordinator
+version: 1.0.0
+description: |
+  Intelligent appointment coordination agent for healthcare scheduling.
+  Manages patient requests, coordinates with Medical Advisor agent,
+  and schedules appointments based on symptom analysis and urgency.
+
+tags:
+  - innovationlab
+  - hackathon
+  - healthcare
+  - appointment
+  - coordination
+  - asi-alliance
+
+protocols:
+  - name: chat
+    version: 1.0.0
+    description: Chat Protocol for patient interaction via ASI:One
+    endpoints:
+      - /chat/message
+      - /chat/ack
+    supported_content_types:
+      - text/plain
+      - application/json
+    
+  - name: appointment-management
+    version: 1.0.0
+    description: Appointment scheduling and management protocol
+    endpoints:
+      - /appointment/create
+      - /appointment/status
+      - /appointment/modify
+
+capabilities:
+  - Natural language appointment request processing
+  - Symptom extraction and analysis coordination
+  - Inter-agent communication with Medical Advisor
+  - Appointment scheduling based on urgency
+  - Status inquiry handling
+  - Multi-language support (future)
+
+interface:
+  type: chat
+  supported_languages:
+    - en
+  
+  example_interactions:
+    - user: "I need to schedule an appointment. I have fever and cough."
+      agent: "Processing your request... Consulting with Medical Advisor..."
+    
+    - user: "Check my appointment status"
+      agent: "Here are your scheduled appointments..."
+
+models:
+  - name: ChatMessage
+    description: Standard chat message format
+  
+  - name: AppointmentRequest
+    description: Structured appointment request
+    fields:
+      - symptoms: List[str]
+      - urgency: str
+      - preferred_time: Optional[str]
+
+metadata:
+  author: SynaptiVerse Team
+  homepage: https://github.com/yourusername/synaptiVerse
+  documentation: https://github.com/yourusername/synaptiVerse/blob/main/docs/design.md
+  license: MIT
+  
+  dependencies:
+    - medical-advisor-agent
+    - metta-knowledge-graph
+  
+  technology_stack:
+    - Fetch.ai uAgents
+    - SingularityNET MeTTa
+    - Agentverse Chat Protocol
+
+privacy:
+  data_handling: |
+    - Patient symptoms are processed in-memory only
+    - No PHI (Protected Health Information) is permanently stored
+    - All consultations are ephemeral and session-based
+    - HIPAA-aware design principles

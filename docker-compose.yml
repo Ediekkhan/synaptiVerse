@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  coordinator:
+    build: .
+    container_name: appointment-coordinator
+    command: python src/agents/appointment_coordinator.py
+    environment:
+      - COORDINATOR_SEED=${COORDINATOR_SEED}
+      - AGENTVERSE_API_KEY=${AGENTVERSE_API_KEY}
+      - LOG_LEVEL=${LOG_LEVEL:-INFO}
+    volumes:
+      - ./src:/app/src
+      - coordinator-storage:/app/.uagents
+    restart: unless-stopped
+    networks:
+      - agent-network
+
+  advisor:
+    build: .
+    container_name: medical-advisor
+    command: python src/agents/medical_advisor.py
+    environment:
+      - ADVISOR_SEED=${ADVISOR_SEED}
+      - AGENTVERSE_API_KEY=${AGENTVERSE_API_KEY}
+      - LOG_LEVEL=${LOG_LEVEL:-INFO}
+    volumes:
+      - ./src:/app/src
+      - advisor-storage:/app/.uagents
+    restart: unless-stopped
+    networks:
+      - agent-network
+    depends_on:
+      - coordinator
+
+volumes:
+  coordinator-storage:
+  advisor-storage:
+
+networks:
+  agent-network:
+    driver: bridge
