@@ -1,0 +1,37 @@
+# 🎯 Quick Reference - Agent Addresses
+
+## Copy-Paste Ready
+
+### **Coordinator**:
+```
+agent1q22ehv9v3wgjgvnw72s52xjku2he3j5h3x7e9hreztkuef5v9esjv7fyyur
+```
+
+### **Advisor**:
+```
+agent1qv5kl3fpn8mn8gpju4m5n9uk6nshwd9uf4tpx7ncuuleg4x6syxw6g8t9xr
+```
+
+---
+
+## Agentverse Links (After Registration):
+```
+https://agentverse.ai/agents/agent1q22ehv9v3wgjgvnw72s52xjku2he3j5h3x7e9hreztkuef5v9esjv7fyyur
+https://agentverse.ai/agents/agent1qv5kl3fpn8mn8gpju4m5n9uk6nshwd9uf4tpx7ncuuleg4x6syxw6g8t9xr
+```
+
+---
+
+## For Hackathon Submission:
+
+**Live Demo**: https://synaptiverse.onrender.com  
+**GitHub**: https://github.com/Ediekkhan/synaptiVerse  
+**Health Check**: https://synaptiverse.onrender.com/health
+
+**Agent Addresses**:
+- Coordinator: `agent1q22ehv9v3wgjgvnw72s52xjku2he3j5h3x7e9hreztkuef5v9esjv7fyyur`
+- Advisor: `agent1qv5kl3fpn8mn8gpju4m5n9uk6nshwd9uf4tpx7ncuuleg4x6syxw6g8t9xr`
+
+---
+
+See full guide: [AGENTVERSE_SETUP.md](AGENTVERSE_SETUP.md)
